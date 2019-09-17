@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Treasure Hunt</title>
@@ -11,13 +12,13 @@
 </head>
 <body>
   <h1>Challenge - Adding Enemies</h1>
-  <canvas id="mycanvas" width="640" height="360" ></canvas>
+  <canvas id="mycanvas" width="640" height="1360" ></canvas>
   <script>
     window.addEventListener("load",function() {
       
       //constants
       var GAME_WIDTH = 640;
-      var GAME_HEIGHT = 360;
+      var GAME_HEIGHT = 1060;
 
       //keep the game going
       var gameLive = true;
@@ -28,22 +29,61 @@
         {
           x: 100, //x coordinate
           y: 100, //y coordinate
-          speedY: 2, //speed in Y
+          speedY: .5, //speed in Y
           w: 40, //width
           h: 40 //heght
         },
+
+        {
+          x: 200,
+          y: 800,
+          speedY: 2,
+          w: 40,
+          h: 40
+        },
+
+        {
+          x: 330,
+          y: 100,
+          speedY: 3,
+          w: 40,
+          h: 40
+        },
+
+        {
+          x: 450, 
+          y: 100,
+          speedY: 5,
+          w: 40,
+          h: 40
+        }
         
       ];
 
+      console.log(enemies.length)
+
       //the player object
-      var player = {
+      var player = 
+      
+      {
         x: 10,
         y: 160,
         speedX: 2.5,
         isMoving: 0,
         w: 40,
         h: 40
-      };
+      }
+
+    //   {
+    //     x: 40,
+    //     y: 200,
+    //     speedX: 1,
+    //     isMoving: 0,
+    //     w: 40,
+    //     h: 40
+    //   }
+    // ];
+
 
       //the goal object
       var goal = {
@@ -78,7 +118,7 @@
         sprites.player.src = 'images/hero.png';
 
         sprites.background = new Image();
-        sprites.background.src = 'images/floor.png';
+        sprites.background.src = 'images/floor-640x1360.png';
 
         sprites.enemy = new Image();
         sprites.enemy.src = 'images/enemy.png';
